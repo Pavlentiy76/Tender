@@ -1,4 +1,4 @@
-package com.pasha.crews.main;
+package com.pasha;
 
 public enum TenderSkills {
     WELD ,
