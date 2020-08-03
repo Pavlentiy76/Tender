@@ -9,20 +9,34 @@ public class BrigadeChoice {
     ArrayList contract;
 
 
-    public static void choiceBrigade(ArrayList contract, ArrayList<Brigade> brigades) {
+    public static void choiceBrigade(ArrayList<Worker> contract, ArrayList<ArrayList<Worker>> brigades)
+            throws IndexOutOfBoundsException {
+
+        System.out.println("The right brigades: ");
+
+        int count;
 
         ArrayList prices = new ArrayList();
 
         for (int i = 0; i < brigades.size(); i++) {
 
-            if (contract.equals(brigades.get(i))) {
+            count = 0;
 
-                prices.add(brigades.get(i).price());
+            for (int j = 0; j < contract.size(); j++) {
+
+                if (contract.get(j).compareTo(brigades.get(i).get(j)) >= 0) {
+
+                    count++;
+
+                    if (count >= contract.size()) {
+                        prices.add(brigades.get(i));
+                        System.out.println("Success " + brigades.get(i));
+                    }
+
+                } else throw new IndexOutOfBoundsException();
             }
         }
-
         System.out.println(prices);
-        //System.out.println(Collections.min(prices));
     }
 
 }

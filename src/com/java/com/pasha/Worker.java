@@ -2,11 +2,11 @@ package com.pasha;
 
 import java.util.Objects;
 
-public class Worker {
+public class Worker implements Comparable<Worker> {
 
-    private int price;
+    private Integer price;
 
-    TenderSkills tenderSkills;
+    private TenderSkills tenderSkills;
 
     public Worker(int price, TenderSkills tenderSkills) {
         this.price = price;
@@ -20,6 +20,18 @@ public class Worker {
 
     public int getPrice() {
         return price;
+    }
+
+    @Override
+    public int compareTo(Worker worker) {
+
+        int result = this.tenderSkills.compareTo(worker.tenderSkills);
+
+       /* if (result == 0){
+            result = this.price.compareTo(worker.price);
+        }*/
+
+        return result;
     }
 
     @Override
@@ -43,4 +55,7 @@ public class Worker {
     public int hashCode() {
         return Objects.hash(price, tenderSkills);
     }
+
+
+
 }

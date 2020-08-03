@@ -6,9 +6,15 @@ import java.util.Objects;
 public class Brigade {
 
     private ArrayList<Worker> workers;
+    private String name;
 
-    public Brigade(ArrayList<Worker> workers) {
+    public Brigade(String name, ArrayList<Worker> workers) {
+        this.name = name;
         this.workers = workers;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int price(){
