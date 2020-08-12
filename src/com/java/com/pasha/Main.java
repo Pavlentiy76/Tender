@@ -64,6 +64,10 @@ public class Main {
         workers1.add(watchman1);
         workers1.add(plumber1);
 
+        workers1.add(finisher1);
+        workers1.add(watchman1);
+        workers1.add(plumber1);
+
         //--------------------------------------------------------------------------
 
         Worker welder2 = new Worker(20, TenderSkills.WELD);
@@ -113,21 +117,18 @@ public class Main {
 
         //-------------------------------------------------------------------------
 
-        Brigade brigade1 = new Brigade("brig1", workers);
-        Brigade brigade2 = new Brigade("brig2", workers1);
-        Brigade brigade3 = new Brigade("brig3", workers2);
+        Brigade brigade3 = new Brigade("brig1", workers);
+        Brigade brigade1 = new Brigade("brig2", workers1);
+        Brigade brigade2 = new Brigade("brig3", workers2);
 
-        ArrayList<ArrayList<Worker>> brigades = new ArrayList<>();
+        ArrayList<Brigade> brigades = new ArrayList<>();
 
-        brigades.add(workers);
-        brigades.add(workers1);
-        brigades.add(workers2);
+        brigades.add(brigade1);
+        brigades.add(brigade2);
+        brigades.add(brigade3);
 
-        try {
-            BrigadeChoice.choiceBrigade(contract, brigades);
-        }catch (IndexOutOfBoundsException ex){
-            ex.printStackTrace();
-        }
+        BrigadeChoice.choiceBrigade(contract,brigades);
+
 
     }
 }

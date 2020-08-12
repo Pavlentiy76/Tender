@@ -17,6 +17,10 @@ public class Brigade {
         return name;
     }
 
+    public ArrayList<Worker> getWorkers() {
+        return workers;
+    }
+
     public int price(){
         int price = 0;
        for (int i=0; i < workers.size(); i++){

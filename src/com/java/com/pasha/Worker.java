@@ -27,10 +27,6 @@ public class Worker implements Comparable<Worker> {
 
         int result = this.tenderSkills.compareTo(worker.tenderSkills);
 
-       /* if (result == 0){
-            result = this.price.compareTo(worker.price);
-        }*/
-
         return result;
     }
 
